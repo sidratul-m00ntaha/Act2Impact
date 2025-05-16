@@ -1,0 +1,33 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+<div class="container mt-5">
+    <h1 class="text-center mb-4">🏆 Leaderboard</h1>
+
+    <table class="table table-striped table-hover">
+        <thead class="table-success">
+            <tr>
+                <th>Rank</th>
+                <th>Username</th>
+                <th>Total Points</th>
+                <th>Badge</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for profile in profiles %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ profile.user.username }}</td>
+                <td>{{ profile.total_points }}</td>
+                <td>{{ profile.badge }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="text-center">
+        <a href="{% url 'task_list' %}" class="btn btn-outline-success">Back to Tasks</a>
+    </div>
+</div>
+
+{% endblock %}

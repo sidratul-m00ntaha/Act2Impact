@@ -1,0 +1,72 @@
+body {
+    background-color: #e6ff94;
+    color: #333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #bffcfb !important;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: #00767e;
+    border-color: #00767e;
+}
+.btn-primary:hover {
+    background-color: #005e63;
+    border-color: #005e63;
+}
+
+.btn-success {
+    background-color: #609b9a;
+    border-color: #609b9a;
+}
+.btn-success:hover {
+    background-color: #4e7d7c;
+    border-color: #4e7d7c;
+}
+
+.btn-outline-success {
+    color: #609b9a;
+    border-color: #609b9a;
+}
+.btn-outline-success:hover {
+    background-color: #609b9a;
+    color: white;
+}
+
+/* Card styling */
+.card {
+    background-color: #bffcfb;
+    color: #00767e;
+}
+.card-img-fixed {
+    height: 200px;              /* Fixed height */
+    object-fit: cover;          /* Ensures image fills area without distortion */
+    width: 100%;                /* Makes sure image spans the card width */
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+/* Accent texts or highlights */
+.highlight {
+    background-color: #00767e;
+    padding: 0.3rem;
+    border-radius: 5px;
+    color: #ffffff;
+}
+
+h1, h2, h3 {
+    color: #00767e;
+}
+
+p {
+    color: #609b9a;
+}
+.badge {
+    font-size: 0.9rem;
+    padding: 0.4em 0.6em;
+    border-radius: 8px;
+}

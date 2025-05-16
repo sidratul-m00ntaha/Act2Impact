@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %}Search Results - Act2Impact{% endblock %}
+
+{% block content %}
+  <h2>Search Results for "{{ query }}"</h2>
+  {% if results %}
+    <ul>
+      {% for task in results %}
+        <li>
+          <strong>{{ task.title }}</strong> - {{ task.type }}
+          <br>
+          Created by: {{ task.user.username }} on {{ task.created_at|date:"F j, Y" }}
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No tasks found matching your search.</p>
+  {% endif %}
+  <a href="{% url 'task_list' %}">Back to Task List</a>
+{% endblock %}

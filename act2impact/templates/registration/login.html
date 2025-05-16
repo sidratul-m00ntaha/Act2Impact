@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h2>Login</h2>
+<p>Welcome to Act2Impact! Please log in to continue.</p>
+<form method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button class="btn btn-warning" type="submit">Register</button>
+</form>
+<p>Don't have an account? <a href="{% url 'register' %}">Register here</a></p>
+{% if next %}
+    <p>You will be redirected to {{ next }} after logging in.</p>
+{% endif %}
+<p>Forgot your password? <a href="{% url 'password_reset' %}">Reset it here</a></p>
+{% if registration_open %}
+    <p>New user? <a href="{% url 'register' %}">Register here</a></p>
+{% endif %}
+{% endblock %}

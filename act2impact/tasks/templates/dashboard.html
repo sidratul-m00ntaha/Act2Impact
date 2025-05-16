@@ -1,0 +1,75 @@
+
+{% load static %}
+
+{% block content %}
+<style>
+    .badge-box {
+        margin: 20px auto;
+        padding: 30px;
+        border: 2px solid #5F8B4C;
+        border-radius: 15px;
+        width: 320px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        animation: fadeIn 1s ease-in-out;
+    }
+
+    .badge-icon {
+        font-size: 60px;
+        animation: glow 2s infinite alternate;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes glow {
+        from { text-shadow: 0 0 5px #ffd700, 0 0 10px #ffd700; }
+        to { text-shadow: 0 0 20px #ffd700, 0 0 30px #ffd700; }
+    }
+
+    .btn-tasks {
+        margin-top: 30px;
+        background-color: #5F8B4C;
+        color: white;
+        padding: 12px 25px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: background-color 0.3s;
+    }
+
+    .btn-tasks:hover {
+        background-color: #4a703c;
+    }
+</style>
+
+<div style="text-align: center; margin-top: 60px;">
+    <h1>Welcome, {{ user.username }}! 👋</h1>
+
+    <div class="badge-box">
+        <h2>Total Points: <span style="color: #5F8B4C;">{{ profile.total_points }}</span> 🏆</h2>
+        
+        <h2>Badge:</h2>
+        {% if profile.badge == "Gold" %}
+            <div class="badge-icon" style="color: goldenrod;">🥇 Gold</div>
+        {% elif profile.badge == "Silver" %}
+            <div class="badge-icon" style="color: silver;">🥈 Silver</div>
+        {% else %}
+            <div class="badge-icon" style="color: peru;">🥉 Bronze</div>
+        {% endif %}
+
+        <!-- Existing total points and badge stuff -->
+
+<h3 style="margin-top: 20px;">Progress to next badge:</h3>
+
+<div style="background-color: #eee; border-radius: 10px; overflow: hidden; margin-top: 10px;">
+    <div style="background-color: #5F8B4C; width: {{ progress_percentage }}%; padding: 10px 0; color: white; text-align: center;">
+        {{ progress_percentage }}%
+    </div>
+</div>
+    </div>
+
+    <a href="{% url 'task_list' %}" class="btn-tasks">Go to Tasks</a>
+</div>
+{% endblock %}

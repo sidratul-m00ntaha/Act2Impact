@@ -1,0 +1,18 @@
+{% extends "layout.html" %} {% block title %} Act2Impact - Tasks {% endblock %}
+{% block content %}
+<h1 class="text-center text-#2E2E2E mt-4">Welcaome to Act2Impact Tasks</h1>
+<h2>
+    {% if form.instance.pk %}
+    Edit Task 
+    {% else %}
+    Create Task 
+    {% endif %}
+    <form method="post" enctype="multipart/form-data" class="form">
+        {% csrf_token %}
+        
+        {{form.as_p}}
+        <button class="btn btn-warning" type="submit">Submit</button>
+    </form>
+    <a href="{% url 'task_list' %}">Back to task list</a>
+</h2>
+{% endblock %}
