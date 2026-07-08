@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "499742751454",
+    "project_id": "act2impact-c866c",
+    "storage_bucket": "act2impact-c866c.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:499742751454:android:62d4d4c21b9004d907604f",
+        "android_client_info": {
+          "package_name": "com.act2impact.act2impact"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCTfSVBAiOLDLWiq0dzckMPYTHD2Xng0MA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
